@@ -1,11 +1,200 @@
 [
-  {"id":1,"name":"Burrata da estação","category":"Entradas","description":"Tomates confitados, pêssego grelhado, manjericão e azeite de ervas.","price":48,"image":"https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=900&q=85","tag":"Da horta"},
-  {"id":2,"name":"Crudo de peixe branco","category":"Entradas","description":"Pesca do dia, leche de tigre cítrico, coentro e crocante de milho.","price":52,"image":"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=85","tag":"Fresco"},
-  {"id":3,"name":"Ravioli de cogumelos","category":"Principais","description":"Massa fresca artesanal, cogumelos salteados e manteiga de sálvia.","price":76,"image":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85","tag":"Da casa"},
-  {"id":4,"name":"Filé ao molho de vinho","category":"Principais","description":"Filé grelhado, jus de vinho tinto, purê de batata e mini legumes.","price":94,"image":"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85","tag":"Favorito"},
-  {"id":5,"name":"Peixe na brasa","category":"Principais","description":"Peixe do dia, beurre blanc de limão-siciliano e arroz de castanhas.","price":88,"image":"https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=900&q=85","tag":"Da costa"},
-  {"id":6,"name":"Pavlova de frutas","category":"Sobremesas","description":"Merengue delicado, creme de baunilha e frutas frescas da estação.","price":34,"image":"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85","tag":"Leve"},
-  {"id":7,"name":"Fondant de chocolate","category":"Sobremesas","description":"Chocolate intenso, centro cremoso e sorvete artesanal de baunilha.","price":38,"image":"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85","tag":"Clássico"},
-  {"id":8,"name":"Soda de hibisco","category":"Bebidas","description":"Infusão de hibisco, limão, especiarias e água com gás.","price":18,"image":"https://images.unsplash.com/photo-1513558161293-cadb8f5a9b8a?auto=format&fit=crop&w=900&q=85","tag":"Sem álcool"},
-  {"id":9,"name":"Limonada da casa","category":"Bebidas","description":"Limão fresco, toque de alecrim e xarope feito na casa.","price":16,"image":"https://images.unsplash.com/photo-1513558161293-cadb8f5a9b8a?auto=format&fit=crop&w=900&q=85","tag":"Da casa"}
+  {
+    "id": 1,
+    "name": "Burrata da casa",
+    "category": "Entradas",
+    "description": "Queijo cremoso, tomate e manjericão.",
+    "price": 38,
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "tag": "Entrada"
+  },
+  {
+    "id": 2,
+    "name": "Batata rústica",
+    "category": "Entradas",
+    "description": "Batatas assadas com ervas e molho da casa.",
+    "price": 22,
+    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
+    "tag": "Popular"
+  },
+  {
+    "id": 3,
+    "name": "Bruschetta",
+    "category": "Entradas",
+    "description": "Pão tostado, tomate fresco e azeite.",
+    "price": 24,
+    "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=900&q=80",
+    "tag": "Entrada"
+  },
+  {
+    "id": 4,
+    "name": "Isca de frango",
+    "category": "Entradas",
+    "description": "Frango crocante com molho especial.",
+    "price": 29,
+    "image": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=80",
+    "tag": "Queridinho"
+  },
+  {
+    "id": 5,
+    "name": "Filé com fritas",
+    "category": "Principais",
+    "description": "Filé grelhado, arroz e batata frita.",
+    "price": 49,
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+    "tag": "Mais pedido"
+  },
+  {
+    "id": 6,
+    "name": "Frango grelhado",
+    "category": "Principais",
+    "description": "Frango grelhado com arroz e purê de batata.",
+    "price": 36,
+    "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80",
+    "tag": "Leve"
+  },
+  {
+    "id": 7,
+    "name": "Macarrão à bolonhesa",
+    "category": "Principais",
+    "description": "Massa ao molho de carne feito na casa.",
+    "price": 34,
+    "image": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?auto=format&fit=crop&w=900&q=80",
+    "tag": "Clássico"
+  },
+  {
+    "id": 8,
+    "name": "Lasanha",
+    "category": "Principais",
+    "description": "Camadas de massa, molho e queijo gratinado.",
+    "price": 39,
+    "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=80",
+    "tag": "Da casa"
+  },
+  {
+    "id": 9,
+    "name": "Hambúrguer da Maison",
+    "category": "Principais",
+    "description": "Pão macio, carne, queijo e molho especial.",
+    "price": 35,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    "tag": "Popular"
+  },
+  {
+    "id": 10,
+    "name": "Pizza margherita",
+    "category": "Principais",
+    "description": "Mussarela, tomate e manjericão.",
+    "price": 42,
+    "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80",
+    "tag": "Para dividir"
+  },
+  {
+    "id": 11,
+    "name": "Peixe grelhado",
+    "category": "Principais",
+    "description": "Peixe do dia com arroz e legumes.",
+    "price": 46,
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "tag": "Da casa"
+  },
+  {
+    "id": 12,
+    "name": "Pavê de chocolate",
+    "category": "Sobremesas",
+    "description": "Creme, biscoito e chocolate.",
+    "price": 16,
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80",
+    "tag": "Sobremesa"
+  },
+  {
+    "id": 13,
+    "name": "Brownie com sorvete",
+    "category": "Sobremesas",
+    "description": "Brownie de chocolate com sorvete de creme.",
+    "price": 19,
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
+    "tag": "Favorito"
+  },
+  {
+    "id": 14,
+    "name": "Cheesecake",
+    "category": "Sobremesas",
+    "description": "Fatia cremosa com calda de frutas.",
+    "price": 18,
+    "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
+    "tag": "Sobremesa"
+  },
+  {
+    "id": 15,
+    "name": "Água mineral",
+    "category": "Bebidas",
+    "description": "Água mineral sem gás — 500 ml.",
+    "price": 5,
+    "image": "https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=900&q=80",
+    "tag": "500 ml"
+  },
+  {
+    "id": 16,
+    "name": "Água com gás",
+    "category": "Bebidas",
+    "description": "Água mineral com gás — 500 ml.",
+    "price": 6,
+    "image": "https://images.unsplash.com/photo-1523362628745-0c100150b2b0?auto=format&fit=crop&w=900&q=80",
+    "tag": "500 ml"
+  },
+  {
+    "id": 17,
+    "name": "Suco de laranja",
+    "category": "Bebidas",
+    "description": "Suco de laranja — 300 ml.",
+    "price": 10,
+    "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80",
+    "tag": "300 ml"
+  },
+  {
+    "id": 18,
+    "name": "Suco de limão",
+    "category": "Bebidas",
+    "description": "Suco de limão gelado — 300 ml.",
+    "price": 9,
+    "image": "https://images.unsplash.com/photo-1513558161293-cadb8f5a9b8a?auto=format&fit=crop&w=900&q=80",
+    "tag": "300 ml"
+  },
+  {
+    "id": 19,
+    "name": "Refrigerante cola",
+    "category": "Bebidas",
+    "description": "Lata gelada — 350 ml.",
+    "price": 7,
+    "image": "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=80",
+    "tag": "350 ml"
+  },
+  {
+    "id": 20,
+    "name": "Refrigerante guaraná",
+    "category": "Bebidas",
+    "description": "Lata gelada — 350 ml.",
+    "price": 7,
+    "image": "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=900&q=80",
+    "tag": "350 ml"
+  },
+  {
+    "id": 21,
+    "name": "Chá gelado",
+    "category": "Bebidas",
+    "description": "Chá da casa com limão — 300 ml.",
+    "price": 8,
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=80",
+    "tag": "300 ml"
+  },
+  {
+    "id": 22,
+    "name": "Limonada",
+    "category": "Bebidas",
+    "description": "Limão espremido na hora — 300 ml.",
+    "price": 9,
+    "image": "https://images.unsplash.com/photo-1513558161293-cadb8f5a9b8a?auto=format&fit=crop&w=900&q=80",
+    "tag": "300 ml"
+  }
 ]
