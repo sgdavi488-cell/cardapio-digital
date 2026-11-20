@@ -60,7 +60,11 @@ document.querySelector("#filters").addEventListener("click", event => {
   const button = event.target.closest("[data-category]");
   if (!button) return;
   activeCategory = button.dataset.category;
-  document.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item === button));
+  document.querySelectorAll(".filter").forEach(item => {
+    const active = item === button;
+    item.classList.toggle("active", active);
+    item.setAttribute("aria-pressed", String(active));
+  });
   renderMenu();
 });
 document.querySelector("#search").addEventListener("input", event => {
@@ -108,6 +112,9 @@ document.querySelector("#cart-items").addEventListener("click", event => {
 function setCartOpen(open) {
   document.body.classList.toggle("cart-open", open);
   document.querySelector("#cart-drawer").setAttribute("aria-hidden", String(!open));
+  document.querySelector("#open-cart").setAttribute("aria-expanded", String(open));
+  if (open) document.querySelector("#close-cart").focus();
+  else document.querySelector("#open-cart").focus();
 }
 document.querySelector("#open-cart").addEventListener("click", () => setCartOpen(true));
 document.querySelector("#close-cart").addEventListener("click", () => setCartOpen(false));
