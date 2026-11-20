@@ -1,23 +1,28 @@
 # Maison — Cardápio Digital
 
-Uma experiência de cardápio digital para um restaurante fictício de cozinha contemporânea. O projeto foi pensado como uma vitrine real: navegação simples, fotografia em destaque, texto editorial e um fluxo de pedido direto.
+Um cardápio online para um restaurante fictício. A ideia foi montar algo que desse para imaginar em uso de verdade: abrir no celular, encontrar um prato sem ficar caçando informação, colocar na sacola e encaminhar o pedido.
 
-## O que tem por aqui
+## O que já funciona
 
-- Menu dividido em entradas, principais, sobremesas e bebidas.
-- Busca por nome e descrição, além de filtros por categoria.
-- Sacola com controle de quantidades e total calculado automaticamente.
-- Finalização do pedido pelo WhatsApp, com resumo e valores.
-- Catálogo carregado por uma requisição `fetch` a um endpoint JSON do próprio projeto.
-- Layout adaptável para celular e desktop.
+- Cardápio separado em entradas, pratos principais, sobremesas e bebidas.
+- Busca por nome e descrição.
+- Filtros por categoria.
+- Sacola com quantidade dos itens e total atualizado.
+- Pedido organizado para ser enviado pelo WhatsApp.
+- Catálogo carregado de um arquivo JSON.
+- Layout que se adapta a celular e computador.
+
+## Um detalhe do projeto
+
+Os pratos ficam em `data/menu.json`. O JavaScript busca esse arquivo com `fetch`, então o catálogo fica separado da interface. É uma forma simples de simular uma API de leitura sem precisar manter um servidor próprio.
 
 ## Tecnologias
 
-HTML, CSS e JavaScript puro. O catálogo fica em `data/menu.json`, servido como recurso JSON estático. Isso funciona como uma API de leitura (GET) para este projeto e pode ser substituído por um backend real no futuro.
+HTML, CSS e JavaScript puro.
 
 ## Configurar o WhatsApp
 
-Abra `config.js` e informe o número que receberá os pedidos, com código do país e DDD, apenas números.
+No arquivo `config.js`, coloque o número que vai receber os pedidos, com código do país e DDD, somente números:
 
 ```js
 window.RESTAURANT_CONFIG = {
@@ -25,21 +30,16 @@ window.RESTAURANT_CONFIG = {
 };
 ```
 
-O número fica em um arquivo separado para facilitar a configuração. O pedido é aberto no WhatsApp do cliente com os itens, quantidades e total; a confirmação e o pagamento são tratados pela equipe.
+O número acima é apenas um exemplo. Troque pelo número correto antes de usar o fluxo de pedidos.
 
-## Rodar localmente
+## Rodar no computador
 
-Como o catálogo é carregado com `fetch`, abra o projeto por um servidor local (por exemplo, Live Server no VS Code), e não diretamente pelo arquivo `index.html`.
+Como o catálogo é carregado com `fetch`, inicie o projeto com Live Server ou outro servidor local. Abrir o arquivo `index.html` diretamente pode impedir o carregamento do JSON.
 
-## Publicar no GitHub Pages
+## Acessar online
 
-1. No repositório, abra **Settings → Pages**.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Escolha a branch `main` e a pasta `/ (root)`, depois salve.
-4. Aguarde o deploy. O endereço será:
+[Ver o Maison no GitHub Pages](https://sgdavi488-cell.github.io/cardapio-digital/)
 
-https://sgdavi488-cell.github.io/cardapio-digital/
+---
 
-## Observação
-
-Maison é uma marca e um restaurante fictícios criados para demonstração de desenvolvimento front-end. Fotos carregadas de imagens remotas dependem de conexão com a internet.
+Maison é uma marca fictícia criada para este projeto. As imagens são carregadas de serviços externos e precisam de conexão com a internet.
