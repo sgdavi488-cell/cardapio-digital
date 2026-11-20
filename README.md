@@ -1,45 +1,71 @@
 # Maison — Cardápio Digital
 
-Um cardápio online para um restaurante fictício. A ideia foi montar algo que desse para imaginar em uso de verdade: abrir no celular, encontrar um prato sem ficar caçando informação, colocar na sacola e encaminhar o pedido.
+O Maison é um cardápio digital criado para um restaurante fictício. A ideia nasceu de uma atividade do curso de programação: depois de desenvolver uma primeira versão durante o curso, decidi refazer o projeto e explorar melhor a interface, a organização dos produtos e o fluxo de pedidos.
 
-## O que já funciona
+**[Acessar o projeto online](https://sgdavi488-cell.github.io/cardapio-digital/)**
 
-- Cardápio separado em entradas, pratos principais, sobremesas e bebidas.
-- Busca por nome e descrição.
-- Filtros por categoria.
-- Sacola com quantidade dos itens e total atualizado.
-- Pedido organizado para ser enviado pelo WhatsApp.
-- Catálogo carregado de um arquivo JSON.
-- Layout que se adapta a celular e computador.
+## O que o projeto faz
 
-## Um detalhe do projeto
+- Exibe pratos separados em entradas, principais, sobremesas e bebidas.
+- Permite buscar itens pelo nome ou pela descrição.
+- Filtra o cardápio por categoria.
+- Adiciona produtos à sacola e permite ajustar as quantidades.
+- Calcula o total do pedido automaticamente.
+- Prepara uma mensagem com os itens e o total para continuar o pedido pelo WhatsApp.
+- Adapta a interface para celular e computador.
 
-Os pratos ficam em `data/menu.json`. O JavaScript busca esse arquivo com `fetch`, então o catálogo fica separado da interface. É uma forma simples de simular uma API de leitura sem precisar manter um servidor próprio.
+## Como os dados são organizados
 
-## Tecnologias
+O catálogo fica em `data/menu.json`. A aplicação carrega esse arquivo usando `fetch`, separando os dados dos produtos da parte visual.
 
-HTML, CSS e JavaScript puro.
-
-## Configurar o WhatsApp
-
-No arquivo `config.js`, coloque o número que vai receber os pedidos, com código do país e DDD, somente números:
+As configurações do fluxo de pedidos ficam em `config.js`. Para habilitar o envio ao WhatsApp, é necessário preencher `whatsappNumber` com o número que receberá os pedidos, incluindo DDI e DDD e usando somente números:
 
 ```js
 window.RESTAURANT_CONFIG = {
-  whatsappNumber: "5581999999999"
+  whatsappNumber: "55DDDNÚMERO"
 };
 ```
 
-O número acima é apenas um exemplo. Troque pelo número correto antes de usar o fluxo de pedidos.
+O valor acima é apenas um modelo. O repositório não inclui um número real. Enquanto essa configuração estiver vazia, o botão informa que falta configurar o WhatsApp.
 
-## Rodar no computador
+## Tecnologias
 
-Como o catálogo é carregado com `fetch`, inicie o projeto com Live Server ou outro servidor local. Abrir o arquivo `index.html` diretamente pode impedir o carregamento do JSON.
+- HTML5
+- CSS3
+- JavaScript
+- JSON para os dados do cardápio
+- LocalStorage não é necessário: a sacola é mantida durante a sessão atual da página
 
-## Acessar online
+## Estrutura principal
 
-[Ver o Maison no GitHub Pages](https://sgdavi488-cell.github.io/cardapio-digital/)
+```text
+cardapio-digital/
+├── data/
+│   └── menu.json
+├── config.js
+├── app.js
+├── index.html
+└── styles.css
+```
+
+## Executar localmente
+
+Como o cardápio é carregado com `fetch`, abra o projeto por meio de um servidor local. No VS Code, você pode usar a extensão Live Server.
+
+1. Baixe ou clone o repositório.
+2. Abra a pasta do projeto no VS Code.
+3. Inicie o `index.html` com o Live Server.
+4. Acesse o endereço local exibido pela extensão.
+
+Abrir o arquivo HTML diretamente pelo gerenciador de arquivos pode impedir o carregamento de `data/menu.json`.
+
+## Observações
+
+- Maison é uma marca fictícia criada para o projeto.
+- As imagens do cardápio vêm de serviços externos; por isso, precisam de conexão com a internet.
+- O WhatsApp apenas recebe a mensagem preparada pelo site. A confirmação do pedido acontece fora da aplicação.
+- O catálogo atual é de demonstração e pode ser alterado em `data/menu.json`.
 
 ---
 
-Maison é uma marca fictícia criada para este projeto. As imagens são carregadas de serviços externos e precisam de conexão com a internet.
+Projeto desenvolvido por Davi como parte dos estudos de desenvolvimento web.
