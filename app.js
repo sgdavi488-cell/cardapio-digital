@@ -6,6 +6,23 @@ let activeCategory = "Todos";
 let searchTerm = "";
 
 const money = value => value.toLocaleString("pt-BR", {style:"currency",currency:"BRL"});
+
+// Se uma foto externa falhar, tenta outras imagens automaticamente.
+const imageBackups = [
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80"
+];
+window.handleDishImageError = function(image) {
+  const next = Number(image.dataset.backup || 0);
+  if (next < imageBackups.length) {
+    image.dataset.backup = String(next + 1);
+    image.src = imageBackups[next];
+  } else {
+    image.classList.add("image-unavailable");
+    image.removeAttribute("src");
+  }
+};
 const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 
 async function loadMenu() {
@@ -14,7 +31,7 @@ async function loadMenu() {
     const response = await fetch("./data/menu.json");
     if (!response.ok) throw new Error("Não foi possível carregar o menu.");
     menu = await response.json();
-    statusLine.textContent = "MENU DA CASA · ATUALIZADO";
+    statusLine.textContent = `${menu.length} opções no cardápio · toque em adicionar para escolher`;
     renderMenu();
   } catch (error) {
     statusLine.textContent = "Não foi possível carregar o menu. Atualize a página para tentar novamente.";
@@ -30,7 +47,7 @@ function renderMenu() {
   });
   grid.innerHTML = visible.length ? visible.map(item => `
     <article class="dish-card">
-      <div class="dish-photo"><img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=900';this.classList.add('image-fallback')"><span class="dish-category">${escapeHTML(item.tag || item.category)}</span></div>
+      <div class="dish-photo"><img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="handleDishImageError(this)"><span class="dish-category">${escapeHTML(item.tag || item.category)}</span></div>
       <div class="dish-info">
         <div class="dish-title-line"><h3>${escapeHTML(item.name)}</h3><span class="dish-price">${money(item.price)}</span></div>
         <p class="dish-description">${escapeHTML(item.description)}</p>
@@ -64,7 +81,7 @@ grid.addEventListener("click", event => {
   const id = Number(button.dataset.add);
   cart.set(id, (cart.get(id) || 0) + 1);
   renderCart();
-  showToast("Adicionado à sua sacola.");
+  showToast("Adicionado à sacola! Toque em Sacola para conferir.");
 });
 
 function renderCart() {
