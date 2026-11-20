@@ -30,7 +30,7 @@ function renderMenu() {
   });
   grid.innerHTML = visible.length ? visible.map(item => `
     <article class="dish-card">
-      <div class="dish-photo"><img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" loading="lazy"><span class="dish-category">${escapeHTML(item.tag || item.category)}</span></div>
+      <div class="dish-photo"><img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" loading="lazy" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=900';this.classList.add('image-fallback')"><span class="dish-category">${escapeHTML(item.tag || item.category)}</span></div>
       <div class="dish-info">
         <div class="dish-title-line"><h3>${escapeHTML(item.name)}</h3><span class="dish-price">${money(item.price)}</span></div>
         <p class="dish-description">${escapeHTML(item.description)}</p>
